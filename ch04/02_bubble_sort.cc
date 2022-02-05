@@ -8,7 +8,17 @@ void Swap(int *a, int i, int j) {
     a[j] = t;
 }
 
-void BubbleSort(int *a, int n) {
+void BubbleSort1(int *a, int n) {
+    for (int last=n-1; last>=1; last--) {
+        for (int i=0; i<=last-1; i++) {
+            if (a[i] > a[i+1]) {
+                Swap(a, i, i+1);
+            }
+        }
+    }
+}
+
+void BubbleSort2(int *a, int n) {
     for (int last=n-1; last>=1; last--) {
         bool sorted = true;
         for (int i=0; i<=last-1; i++) {
@@ -33,6 +43,9 @@ void Print(int *a, int n) {
 int main() {
     int n=10;
     int a[] = {3, 31, 48, 73, 8, 11, 20, 29, 65, 15};
-    BubbleSort(a, n);
+    BubbleSort1(a, n);
+    Print(a, n);
+    int b[] = {3, 31, 48, 73, 8, 11, 20, 29, 65, 15};
+    BubbleSort1(b, n);
     Print(a, n);
 }
