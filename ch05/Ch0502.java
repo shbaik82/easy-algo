@@ -23,10 +23,6 @@ public class Ch0502 {
         return i+1;
     }
 
-    static void sort(int[] a, int p, int r) {
-
-    }
-
     static int select(int[] a, int p, int r, int i) {
         if (r-p+1 <= 5) {
             Arrays.sort(a);
